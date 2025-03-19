@@ -1,31 +1,55 @@
-const farmAnimals = 'cow horse sheep pig chicken';
+// 1. Animal Sounds
+const farmAnimals = { moo: "cow", neigh: "horse", baa: "sheep", oink: "pig", cluck: "chicken" };
+const { moo, neigh, baa, oink, cluck } = farmAnimals;
 
-const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+// 2. Animal Names
+const animalNames = { bessie: "cow", dolly: "sheep", babe: "pig", little: "chicken" };
+const { bessie, dolly, babe, little } = animalNames;
 
+// 3. Animal Colors
+const animalColors = { blackAndWhite: "cow", black: "sheep", pink: "pig" };
+const { blackAndWhite, black, pink } = animalColors;
+
+// 4. Rainbow Colors (by name)
+const rainbowColors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+const [red, orange, yellow, green, blue, indigo, violet] = rainbowColors;
+
+// 5. Rainbow Colors (Initials, without Indigo)
+const [r, o, y, g, b, , v] = rainbowColors;
+
+// 6. Assigning Only Indigo
+const [, , , , , indg] = rainbowColors;
+
+
+// 7. Muppet Object Destructuring
 const muppet = {
-  muppetName: 'Miss Piggy',
-  color: 'pink',
-  song: 'Never Before, Never Again',
-  job: 'Cast member of The Muppet Show',
-  partner: 'Kermit'
+  muppetName: "Miss Piggy", 
+  color: "pink", 
+  song: "Never Before, Never Again", 
+  song1: "Bein' Green",
+  song2: "Moving Right Along",
+  song3: "Rainbow Connection",
+  song4: "I Hope That Something Better Comes Along",
+  job: "Cast member of The Muppet Show",
+  partner: "Kermit",
+  nested: { 
+    job: "Host of The Muppet Show",
+    partner: "Miss Piggy", 
+    song2: "Moving Right Along",
+    song4: "I Hope That Something Better Comes Along"
+  }
 };
 
-const nestedMuppet = {
-  nestedName: 'Kermit',
-  nestedColor: 'green',
-  album: {
-    theMuppetMovie: {
-      song1: 'Rainbow Connection',
-      song2: 'Moving Right Along',
-      song3: 'Never Before, Never Again',
-      song4: 'I Hope That Something Better Comes Along',
-    },
-  },
-  nestedJob: 'Host of The Muppet Show',
-  nestedPartner: 'Miss Piggy'
-};
 
-// Strings
+const { muppetName, color, song, song1, song2, song3, song4, job, partner } = muppet;
+
+
+const { job: nestedJob, song2: secondSong, song4: fourthSong, partner: nestedPartner } = muppet.nested;
+
+
+
+
+
 
 // 1. Use destructuring to assign appropriate variables based on the sounds animals make.
 
